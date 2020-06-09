@@ -1,0 +1,37 @@
+<?php
+    $categories = $this->getCategoryCollection();
+
+?>
+<div class="widget block block-static-block mb-5 container" id="catewithimg">
+    <div class="title-section mb-4">
+        <h2 class="text-uppercase"><span class="d-block"><?php echo $this->getMainTitle(); ?></span> <?php echo $this->getTagLine(); ?></h2>
+    </div>
+    <div class="row align-items-stretch">
+      
+    
+
+        <?php
+        $k=0;
+        foreach($categories as $category):
+            $cat = $this->getCategorymodel($category->getId());
+            $image = $cat->getImageUrl();
+
+            if($k==0): ?>
+                <div class="col-lg-8">
+            <?php elseif($k==1):?>
+                <div class="col-lg-4">
+            <?php endif;?>
+                
+                <div class="product-item sm-height <?=$k==0?"full-height":""?> bg-gray <?=$k==1?"mb-4":""?>">
+                    <a class="category_name" href="<?php echo $cat->getUrl(); ?>">
+                       <img src="<?php echo $image; ?>" class="img-responsive category_image" alt="<?php echo $cat->getName(); ?>" />
+                    </a>
+                </div>
+
+            <?php if($k==0||$k==2||($k==1&&count($categories)==2)): ?>
+                </div>
+            <?php endif; $k++;?>
+        <?php endforeach; ?>
+        
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<?php
+    $products = $this->getProductCollection();
+   
+?>
+<div class="widget block block-static-block container mb-5">
+    <div class="row">
+        <div class="title-section text-center col-12">
+            <h2 class="text-uppercase"> <?php echo $this->getMaintitle(); ?></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 block-3">
+            <div class="nonloop-block-3 owl-carousel">
+
+            <?php
+                $k=0;
+                foreach($products as $product):?>
+                    <div class="item">
+                        <div class="item-entry">
+                          <a href="<?php echo $product->getProductUrl()?>" class="product-item md-height bg-gray d-block">
+                            <img src="<?php echo $this->helper('Magento\Catalog\Helper\Image')
+                    ->init($product, 'product_base_image')
+                    ->constrainOnly(TRUE)
+                    ->keepAspectRatio(TRUE)
+                    ->keepTransparency(TRUE)
+                    ->keepFrame(FALSE)
+                    ->resize(300, 695)->getUrl(); ?>" alt="Image" class="img-fluid">
+                          </a>
+                          <h2 class="item-title"><a href="<?php echo $block->escapeUrl($block->getProductUrl($product))?>"><?php echo $product->getName()?></a></h2>
+                          <strong class="item-price">
+                            <!-- <del>$46.00</del>  -->
+                            <?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($product->getPrice(),true,false); ?></strong>
+                          <div class="star-rating">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                          </div>
+                        </div>
+                    </div>
+                    
+            <?php endforeach; ?>
+
+            </div>
+        </div>
+    </div>
+</div>
