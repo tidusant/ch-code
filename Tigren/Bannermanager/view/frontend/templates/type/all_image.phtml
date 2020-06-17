@@ -259,9 +259,11 @@
                         <div class="text">
                            <?php echo $banner->getDescription() ?>
                         </div>
+                        <?php if(!empty($banner->getBannerUrl())):?>
                         <a href="<?php echo $banner->getBannerUrl() ?>" <?php echo $banner->getTarget() ? 'target="_blank" ' : ''; ?> class="btn">
                         <span class="btn-inner">Learn More</span>
                         </a>
+                      <?php endif ?>
                      </div>
                   </div>
                   <div class="image-container"> 
