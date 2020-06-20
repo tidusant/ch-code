@@ -56,7 +56,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
 
         parent::_construct();
 
-        if ($this->_isAllowedAction('Tigren_Bannermanager::save')) {
+        if ($this->_isAllowedAction('Tigren_Bannermanager::banners_save')) {
             $this->buttonList->update('save', 'label', __('Save Banner'));
             $this->buttonList->add(
                 'saveandcontinue',

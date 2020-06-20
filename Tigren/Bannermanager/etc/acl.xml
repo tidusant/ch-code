@@ -11,8 +11,14 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Tigren_Bannermanager::bannermanager" title="Tigren Banner Manager"
                           sortOrder="200">
-                    <resource id="Tigren_Bannermanager::block" title="Blocks" sortOrder="10"/>
-                    <resource id="Tigren_Bannermanager::banner" title="Banners" sortOrder="20"/>
+                    <resource id="Tigren_Bannermanager::block" title="Blocks" sortOrder="10">
+                        <resource id="Tigren_Bannermanager::block_save" title="Block Save" sortOrder="10"/>
+                        <resource id="Tigren_Bannermanager::block_delete" title="Block Delete" sortOrder="20"/>
+                    </resource>
+                    <resource id="Tigren_Bannermanager::banner" title="Banners" sortOrder="20">
+                        <resource id="Tigren_Bannermanager::banners_save" title="Banner Save" sortOrder="10"/>
+                        <resource id="Tigren_Bannermanager::banners_delete" title="Banner Delete" sortOrder="20"/>
+                    </resource>
                     <resource id="Tigren_Bannermanager::setting" title="Setting" sortOrder="30"/>
                 </resource>
             </resource>
