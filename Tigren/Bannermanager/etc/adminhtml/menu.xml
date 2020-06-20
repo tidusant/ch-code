@@ -9,7 +9,7 @@
              resource="Tigren_Bannermanager::block"/>
         <add id="Tigren_Bannermanager::banner" title="Banners" module="Tigren_Bannermanager" sortOrder="20"
              parent="Tigren_Bannermanager::bannermanager" action="bannersmanager/banners"
-             resource="Tigren_Bannermanager::banners"/>
+             resource="Tigren_Bannermanager::banner"/>
         <add id="Tigren_Bannermanager::setting" title="Settings" module="Tigren_Bannermanager" sortOrder="30"
              parent="Tigren_Bannermanager::bannermanager" action="adminhtml/system_config/edit/section/bannersmanager"
              resource="Tigren_Bannermanager::setting"/>
